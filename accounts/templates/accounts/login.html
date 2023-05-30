@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load socialaccount %}
+{% load static %}
+
+{% block title %}
+  Login
+{% endblock title %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/accounts/account.css' %}">
+{% endblock head %}
+{% block content %}
+
+<div class="login-wrapper">
+  <div class="login-page">
+    <div class="login-page-title">
+      <h1>LOGIN</h1>
+    </div>
+    <form class="login-page-form" id="login-form" action="{% url 'accounts:login' %}" method="POST">
+      {% csrf_token %}
+      {% for field in form %}
+        {{ field }}
+      {% endfor %} 
+    <div>
+      <button type="submit">로그인</button>
+      <div class='kakao-button'>
+        <a href="{% provider_login_url 'kakao' method='oauth2' %}">
+          <img class='kakao-button-img' src="{% static 'img/accounts/kakao_login_large_wide.png' %}" alt="카카오_로그인">
+        </a>
+      </div>
+    </div>
+     {% if form.errors %}
+        <script>
+          window.onload = function() {
+            alert("로그인에 실패하였습니다. 아이디와 비밀번호를 확인해주세요.");
+          }
+        </script>
+     {% endif %}
+  </form>
+  <div class="login-page-search">
+    <a href="{% url 'accounts:find_user_id' %}">아이디 찾기</a> /
+    <a href="{% url 'accounts:password_reset_request' %}">비밀번호 찾기</a> 
+  </div>
+</div>
+
+ 
+{% endblock content %}
+
+{% block script %}
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="{% static 'carts/js/cart_login.js' %}"></script>
+{% endblock script %}

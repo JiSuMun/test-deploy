@@ -1,0 +1,74 @@
+{% load static %}
+
+<nav class="navbar">
+  <input class="drawer_check" type="checkbox" id="drawercheck">   
+  <div class="nav-inner">
+    <div class="nav-inner-left">
+    <!--로고-->
+      <div>
+        <a class="logo" href="{% url 'main' %}">PLANET HELPER</a>
+      </div>
+      <!--메뉴-->
+      <ul class="nav-ul">
+        <li class="nav-hover">
+          <div class="nav-drop">
+            <a class="nav-link" href="{% url 'posts:main' %}">플래닛 마켓</a>
+          </div>
+          <ul class="nav-hover-title">
+            <li><a class="nav-hover-list" href="#">링크1</a></li>
+            <li><a class="nav-hover-list" href="#">링크2</a></li>
+            <li><a class="nav-hover-list" href="#">링크3</a></li>
+          </ul>
+        </li>
+        <li>
+          <a class="nav-link" href="#">중고거래</a>
+        </li>
+        <li>
+          <a class="nav-link" href="#">기부</a>
+        </li>
+        <li class="nav-hover">
+          <div class="nav-drop">
+            <a class="nav-link" href="{% url 'posts:main' %}">환경</a>
+          </div>
+          <ul class="nav-hover-title">
+            <li><a class="nav-hover-list hide-pc" href="{% url 'posts:main' %}">전체</a></li>
+            <li><a class="nav-hover-list" href="#">친환경 지도</a></li>
+            <li><a class="nav-hover-list" href="{% url 'posts:news' %}">ECO NEWS</a></li>
+            <li><a class="nav-hover-list" href="{% url 'posts:index' %}">FORUM</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="nav-inner-right">
+      <!--검색-->
+      <div class="search">
+        <input class="search-input" type="text" placeholder="검색">
+        <button class="search-button"><img class="search-button-size" src="{% static 'img/base/search.svg' %}" alt=""></button>
+      </div>
+      <!--로그인-->
+      <ul class="nav-ul">
+        {% if request.user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'accounts:profile' request.user.username %}">프로필</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'accounts:logout' %}">로그아웃</a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link " href="{% url 'accounts:signup' %}">회원가입</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'accounts:login' %}">로그인</a>
+        </li>
+        {% endif %}
+      </ul>
+      <label class="drawer_icon" for="drawercheck">
+        <span class="drawer_sticks"></span>
+      </label>
+    </div>
+  </div>
+  <div class="drawer">
+    
+  </div>
+</nav>

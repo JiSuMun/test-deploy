@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'carts/css/cart_detail.css' %}">
+{% endblock head %}
+
+{% block content %}
+<div class="cart_container">
+  <h1>cart</h1>
+  <div class="cart_div">
+    <div class="cart_check">
+
+    </div>
+    <div class="cart_list_header">
+      <div class="cart_checkbox_col">
+        <input type="checkbox">
+      </div>
+      <div class="cart_product">
+        상품 정보
+      </div>
+      <div class="cart_quantity_col">
+        상품 수량
+      </div>
+      <div class="cart_subtotal">
+        상품 금액
+      </div>
+    </div>
+    {% if user.is_authenticated %}
+      {% if cart %}
+        {% for cart_item in cart.cartitems.all %}
+          <div class="cart_list_content">
+            <div class="cart_checkbox_col">
+              <input type="checkbox">
+            </div>
+            <div class="cart_product">
+              <div class="cart_img_container">
+                <img src="{{ cart_item.product.images.first.image.url }}" alt="">
+              </div>
+              <div class="cart_list_product_text">
+                <div class="cart_list_name">{{ cart_item.product.name }}</div>
+                <div class="cart_list_price">{{ cart_item.product.price }}</div>
+              </div>
+            </div>
+            <div class="cart_quantity_col">
+              <div class="cart_quantity_container">
+                <button class="cart_quantity_button" sytle="background-color: white;">-</button>
+                <div class="cart_quantity">{{ cart_item.quantity }}</div>
+                <button class="cart_quantity_button">+</button>
+              </div>
+            </div>
+            <div class="cart_subtotal">{{ cart_item.sub_total }}</div>
+          </div>
+        {% endfor %}
+        <div class="cart_total">
+          합계 : {{ cart.total }}
+        </div>
+      {% else %}
+        <div>
+          장바구니가 비어있습니다.
+        </div>
+      {% endif %}
+    {% endif %}
+  </div>
+  <button>
+    주문하기
+  </button>
+</div>
+
+
+{% endblock content %}
+
+
+{% block script %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{% static 'carts/js/cart_detail.js' %}"></script>
+{% endblock script %}

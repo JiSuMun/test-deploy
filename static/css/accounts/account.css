@@ -1,0 +1,249 @@
+/* 로그인 */
+.login-wrapper {
+	position: relative;
+	width: 100%;
+	min-height: 100vh;
+	background: url(../../img/base/login_image.jpg) no-repeat;
+	background-color: white;
+	background-size: 100%;
+}
+.login-page {
+	width: 500px;
+  padding-top: 10%;
+  z-index: 1;
+  position: relative;
+  margin: 0 auto;
+	text-align : center;
+}
+.login-page-title h1 {
+	font-weight: bold;
+	padding-bottom: 20px;
+}
+.login-page-form input{
+	display: block;
+	width: 100%;
+	height: 50px;
+	margin-bottom: 10px;
+	border: 0.5px solid grey;
+	border-radius: 10px;
+}
+.login-page-form button {
+	width: 100%;
+	padding: 10px;
+	margin-top: 20px;
+	margin-bottom: 30px;
+	background-color: green;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.kakao-button-img {
+	width: 100%;
+}
+.login-page-search {
+	margin-top: 20px;
+}
+
+/* 회원가입 */
+.signup-wrapper {
+	position: relative;
+	width: 100%;
+	min-height: 100vh;
+	background: url(../../img/base/signup_image.jpg) no-repeat;
+	background-color: white;
+	background-size: 100%;
+	text-align: center;
+}
+.signup-page {
+	width: 500px;
+	padding-top: 5%;
+  z-index: 1;
+  position: relative;
+  margin: 0 auto;
+}
+.signup-page-title h1 {
+	font-weight: bold;
+	padding-bottom: 20px;
+}
+.signup-page-form input{
+	display: block;
+	width: 100%;
+	height: 40px;
+	margin-bottom: 10px;
+	border: 0.5px solid grey;
+	border-radius: 10px;
+}
+.signup-page-form button {
+	width: 100%;
+	padding: 10px;
+	margin-top: 20px;
+	margin-bottom: 30px;
+	background-color: green;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+/*약관 동의*/
+.agreement-page {
+	width: 500px;
+  z-index: 1;
+  position: absolute;
+	background-color: white;
+	top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+	border-radius: 10px;
+	padding: 30px;
+}
+.agreement-page-title h1 {
+		font-weight: bold;
+		padding-bottom: 10px;
+	}
+#agreement-form input {
+	margin-bottom: 10px;
+}
+#agreement-form button {
+	width: 100%;
+	padding: 10px;
+	margin-top: 30px;
+	background-color: green;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+
+/* 정보 수정 */
+.update-wrapper {
+	position: relative;
+	width: 100%;
+	min-height: 100vh;
+	background: url(../../img/base/update_image.jpg) no-repeat;
+	background-color: white;
+	background-size: 100%;
+}
+.update-page {
+  width: 500px;
+  padding-top: 10%;
+  z-index: 1;
+  position: relative;
+  margin: 0 auto;
+	text-align: center;
+}
+.update-page-title h1 {
+	font-weight: bold;
+	padding-bottom: 20px;
+}
+.update-page-form input{
+	display: block;
+	width: 100%;
+	height: 40px;
+	margin-bottom: 10px;
+	border: 0.5px solid grey;
+	border-radius: 10px;
+}
+.update-page-form button {
+	width: 100%;
+	padding: 10px;
+	margin-top: 20px;
+	margin-bottom: 30px;
+	background-color: green;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+/* 비밀번호 수정 */
+.password-wrapper {
+	position: relative;
+	width: 100%;
+	min-height: 100vh;
+	background: url(../../img/base/password_image.jpg) no-repeat;
+	background-color: white;
+	background-size: 100%;
+}
+.password-page {
+  width: 500px;
+  padding-top: 15%;
+  z-index: 1;
+  position: relative;
+  margin: 0 auto;
+	text-align: center;
+}
+.password-page-title h1 {
+	font-weight: bold;
+	padding-bottom: 20px;
+}
+.password-page-form input{
+	display: block;
+	width: 100%;
+	height: 40px;
+	margin-bottom: 10px;
+	border: 0.5px solid grey;
+	border-radius: 10px;
+}
+.password-page-form button {
+	width: 100%;
+	padding: 10px;
+	margin-top: 20px;
+	margin-bottom: 30px;
+	background-color: green;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+/* 반응형 */
+@media (max-width: 1080px) {
+	.login-page {
+		max-width: 50vh;
+		max-height: 50vh;
+	}
+	.signup-page {
+		max-width: 50vh;
+		max-height: 50vh;
+	}
+	.agreement-page {
+		max-width: 50vh;
+		max-height: 50vh;
+	}
+	.update-page {
+		max-width: 50vh;
+		max-height: 50vh;
+	}
+	.password-page {
+		max-width: 50vh;
+		max-height: 50vh;
+	}
+}
+
+@media (max-width: 768px) {
+	.login-page {
+		max-width: 30vh;
+		max-height: 30vh;
+	}
+	.signup-page {
+		max-width: 30vh;
+		max-height: 30vh;
+	}
+	/* .agreement-page {
+		max-width: 30vh;
+		max-height: 30vh;
+	} */
+	.update-page {
+		max-width: 30vh;
+		max-height: 30vh;
+	}
+	.password-page {
+		max-width: 30vh;
+		max-height: 30vh;
+	}
+}
+
+
